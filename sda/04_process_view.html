@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SkillSwap Process View</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #fff; font-family: 'Segoe UI', Arial, sans-serif; color: #000; padding: 40px; }
+  h2 { font-size: 22px; font-weight: 700; margin-bottom: 28px; border-bottom: 2px solid #000; padding-bottom: 10px; }
+  .swimlane { border: 2px solid #000; border-radius: 6px; overflow: hidden; }
+  .sw-headers { display: grid; grid-template-columns: 1fr 1.6fr 1fr; background: #000; color: #fff; }
+  .sw-headers div { text-align: center; font-weight: 700; font-size: 14px; padding: 12px 8px; border-right: 1px solid #444; }
+  .sw-headers div:last-child { border-right: none; }
+  .sw-body { display: grid; grid-template-columns: 1fr 1.6fr 1fr; }
+  .col { border-right: 1.5px solid #ccc; padding: 18px 12px; display: flex; flex-direction: column; gap: 12px; align-items: center; }
+  .col:last-child { border-right: none; }
+  .step-label { font-size: 10px; color: #888; align-self: flex-start; }
+  .step { border: 1.5px solid #000; border-radius: 4px; padding: 10px 14px; text-align: center; width: 100%; }
+  .step strong { display: block; font-size: 12.5px; margin-bottom: 3px; }
+  .step span { font-size: 11px; color: #555; }
+  .step.dashed { border-style: dashed; border-color: #666; }
+  .spacer { flex: 1; min-height: 20px; }
+</style>
+</head>
+<body>
+<h2>SkillSwap Process View (Swimlane Diagram)</h2>
+<div class="swimlane">
+  <div class="sw-headers">
+    <div>Learner</div>
+    <div>SkillSwap System</div>
+    <div>Mentor</div>
+  </div>
+  <div class="sw-body">
+    <!-- Learner -->
+    <div class="col">
+      <span class="step-label">Step 1</span>
+      <div class="step"><strong>Browse Skills</strong><span>Web Dev, Design…</span></div>
+      <span class="step-label">Step 2</span>
+      <div class="step"><strong>View match result</strong></div>
+      <span class="step-label">Step 3</span>
+      <div class="step"><strong>Send Session Request</strong></div>
+      <span class="step-label">Step 4</span>
+      <div class="step"><strong>Attend Session</strong></div>
+      <span class="step-label">Step 5</span>
+      <div class="step"><strong>Rate Session 5 Stars</strong></div>
+    </div>
+    <!-- System -->
+    <div class="col">
+      <div class="step"><strong>Run SmartMatch Algorithm</strong><span>Score goals + availability (85%)</span></div>
+      <div class="step"><strong>Display "Excellent Match!" (85%)</strong><span>Shown on Smart Match screen</span></div>
+      <div class="step"><strong>Validate + Notify Mentor</strong></div>
+      <div class="step"><strong>Schedule Session + Add to My Sessions</strong></div>
+      <div class="step"><strong>Update Credits + Award Badge</strong><span>Quick Learner / Top Mentor unlocked</span></div>
+      <div class="step dashed"><strong>Admin sees activity + pending reports (3)</strong></div>
+    </div>
+    <!-- Mentor -->
+    <div class="col">
+      <div class="spacer"></div>
+      <div class="spacer"></div>
+      <div class="step"><strong>Accept Request</strong></div>
+      <div class="step"><strong>Conduct Session</strong></div>
+      <div class="spacer"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

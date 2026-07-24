@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SkillSwap Development View</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #fff; font-family: 'Segoe UI', Arial, sans-serif; color: #000; padding: 40px; }
+  h2 { font-size: 22px; font-weight: 700; margin-bottom: 28px; border-bottom: 2px solid #000; padding-bottom: 10px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .section { border: 2px solid #000; border-radius: 6px; padding: 16px; }
+  .section h3 { font-size: 14px; font-weight: 700; text-align: center; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1.5px solid #000; }
+  .boxes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .box { border: 1.5px solid #000; border-radius: 4px; padding: 10px 12px; }
+  .box strong { display: block; font-size: 13px; margin-bottom: 3px; }
+  .box span { font-size: 11px; color: #555; }
+  .rest { text-align: center; margin-top: 16px; font-size: 12px; font-weight: 600; }
+  .rest span { border: 1.5px solid #000; border-radius: 20px; padding: 4px 14px; display: inline-block; }
+</style>
+</head>
+<body>
+<h2>SkillSwap Development View (Module / Component Diagram)</h2>
+<div class="grid">
+  <div class="section">
+    <h3>Frontend (Mobile / Web UI)</h3>
+    <div class="boxes">
+      <div class="box"><strong>Home Dashboard</strong><span>Credits, streak, badges</span></div>
+      <div class="box"><strong>Browse Skills Screen</strong><span>Categories, Top Mentors</span></div>
+      <div class="box"><strong>Smart Match UI</strong><span>85% score display</span></div>
+      <div class="box"><strong>Session &amp; Chat UI</strong><span>My Sessions, messaging</span></div>
+      <div class="box"><strong>Admin Dashboard</strong><span>1234 users, 89 sessions</span></div>
+      <div class="box"><strong>Profile &amp; Reviews</strong><span>Ratings, achievements</span></div>
+    </div>
+  </div>
+  <div class="section">
+    <h3>Backend Services</h3>
+    <div class="boxes">
+      <div class="box"><strong>Auth Service</strong><span>JWT, role-based</span></div>
+      <div class="box"><strong>Skill Service</strong><span>CRUD, search</span></div>
+      <div class="box"><strong>Match Service</strong><span>Score algorithm</span></div>
+      <div class="box"><strong>Session Service</strong><span>Schedule, chat</span></div>
+      <div class="box"><strong>Credit/Badge Service</strong><span>Award, streak</span></div>
+      <div class="box"><strong>Admin Service</strong><span>Reports, mgmt</span></div>
+    </div>
+  </div>
+  <div class="section">
+    <h3>Database Layer</h3>
+    <div class="boxes">
+      <div class="box"><strong>PostgreSQL / MySQL</strong><span>Users, Skills, Sessions, Reviews</span></div>
+      <div class="box"><strong>Redis Cache</strong><span>Session tokens, streaks, match cache</span></div>
+    </div>
+  </div>
+  <div class="section">
+    <h3>External Services</h3>
+    <div class="boxes">
+      <div class="box"><strong>Email / Push Notif</strong><span>Alerts, report notices</span></div>
+      <div class="box"><strong>File / Media Store</strong><span>Profile pics, chat media</span></div>
+    </div>
+  </div>
+</div>
+<div class="rest"><span>REST HTTP/JSON</span> Frontend ↔ Backend communication</div>
+</body>
+</html>

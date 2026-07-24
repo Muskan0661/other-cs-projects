@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SkillSwap Logical View</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #fff; font-family: 'Segoe UI', Arial, sans-serif; color: #000; padding: 40px; }
+  h2 { font-size: 22px; font-weight: 700; margin-bottom: 28px; border-bottom: 2px solid #000; padding-bottom: 10px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 6px; }
+  .class-box { border: 2px solid #000; border-radius: 4px; overflow: hidden; font-size: 12px; }
+  .class-header { background: #000; color: #fff; text-align: center; font-weight: 700; font-size: 13px; padding: 8px 10px; }
+  .class-body { padding: 10px 12px; line-height: 1.9; }
+  .class-body div { font-size: 11.5px; }
+  .label-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 14px; }
+  .label { font-size: 10.5px; color: #666; text-align: center; font-style: italic; }
+  .center-box { grid-column: 2; }
+  .report-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .dashed { border-style: dashed; border-color: #555; }
+  .dashed .class-header { background: #555; }
+  .sub-label { text-align: center; font-size: 10.5px; color: #666; font-style: italic; margin-top: 4px; }
+</style>
+</head>
+<body>
+<h2>SkillSwap Logical View (Class Diagram)</h2>
+
+<div class="row">
+  <div class="class-box">
+    <div class="class-header">User</div>
+    <div class="class-body">
+      <div> userID, name, email</div>
+      <div> role: Learner / Mentor</div>
+      <div> credits: int (e.g. 50)</div>
+      <div> streak: int (7 days)</div>
+      <div>+ login(), register()</div>
+      <div>+ getCredits()</div>
+    </div>
+  </div>
+  <div class="class-box">
+    <div class="class-header">Skill</div>
+    <div class="class-body">
+      <div> skillID, title</div>
+      <div> category (Web Dev, Design…)</div>
+      <div> mentorCount</div>
+      <div> description</div>
+      <div>+ getSkills()</div>
+      <div>+ searchByCategory()</div>
+    </div>
+  </div>
+  <div class="class-box">
+    <div class="class-header">SmartMatch</div>
+    <div class="class-body">
+      <div> matchID</div>
+      <div> compatibilityScore (85%)</div>
+      <div> goalAlignment (90%)</div>
+      <div> availabilityScore (85%)</div>
+      <div>+ calculateScore()</div>
+      <div>+ getSuggestions()</div>
+    </div>
+  </div>
+</div>
+
+<div class="label-row">
+  <div class="label">offers →</div>
+  <div class="label">← matched by</div>
+  <div class="label">creates ↓</div>
+</div>
+
+<div class="row">
+  <div class="class-box">
+    <div class="class-header">Session</div>
+    <div class="class-body">
+      <div> sessionID</div>
+      <div> scheduledTime</div>
+      <div> status: active / done</div>
+      <div>+ schedule(), cancel()</div>
+      <div>+ getChatHistory()</div>
+      <div>+ getParticipants()</div>
+    </div>
+  </div>
+  <div class="class-box">
+    <div class="class-header">Review</div>
+    <div class="class-body">
+      <div> reviewID</div>
+      <div> rating: 15 stars</div>
+      <div> comment</div>
+      <div>+ submitReview()</div>
+      <div>+ getAvgRating()</div>
+      <div>+ getMentorRating()</div>
+    </div>
+  </div>
+  <div class="class-box">
+    <div class="class-header">Badge</div>
+    <div class="class-body">
+      <div> badgeID, name</div>
+      <div> type: Quick Learner,</div>
+      <div>&nbsp;&nbsp;Top Mentor, Locked</div>
+      <div>+ award()</div>
+      <div>+ checkEligibility()</div>
+      <div>+ getAll()</div>
+    </div>
+  </div>
+</div>
+
+<div class="label-row">
+  <div class="label">leads to →</div>
+  <div class="label">earns →</div>
+  <div class="label"></div>
+</div>
+
+<div class="report-row">
+  <div></div>
+  <div>
+    <div class="class-box dashed">
+      <div class="class-header">Report</div>
+      <div class="class-body">
+        <div> reportID, type, status</div>
+        <div>+ reviewReport()</div>
+      </div>
+    </div>
+    <div class="sub-label">↑ files (from Session)</div>
+  </div>
+  <div></div>
+</div>
+
+</body>
+</html>
