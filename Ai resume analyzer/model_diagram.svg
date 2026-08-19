@@ -1,0 +1,234 @@
+<svg viewBox="0 0 1000 720" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f1117"/>
+      <stop offset="100%" stop-color="#181c27"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4f8ef7"/>
+      <stop offset="100%" stop-color="#7c5cbf"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3ecf8e"/>
+      <stop offset="100%" stop-color="#2eb87e"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4f8ef7" opacity="0.8"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#3ecf8e" opacity="0.8"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="720" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <rect x="0" y="0" width="1000" height="56" fill="#181c27"/>
+  <rect x="0" y="54" width="1000" height="2" fill="url(#accentGrad)" opacity="0.6"/>
+  <text x="500" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#e8eaf0">AI Resume Analyzer — System Architecture</text>
+  <text x="500" y="50" text-anchor="middle" font-size="11" fill="#7a84a0">CSP-based Job Matching Pipeline</text>
+
+  <!-- ═══════════════ LAYER LABELS ═══════════════ -->
+  <text x="18" y="105" font-size="9" fill="#4f8ef7" font-weight="600" letter-spacing="2">INPUT</text>
+  <text x="18" y="225" font-size="9" fill="#7c5cbf" font-weight="600" letter-spacing="2">EXTRACT</text>
+  <text x="18" y="370" font-size="9" fill="#f7c948" font-weight="600" letter-spacing="2">MODEL</text>
+  <text x="18" y="505" font-size="9" fill="#3ecf8e" font-weight="600" letter-spacing="2">SOLVE</text>
+  <text x="18" y="640" font-size="9" fill="#f75f5f" font-weight="600" letter-spacing="2">OUTPUT</text>
+
+  <!-- Vertical pipeline line -->
+  <line x1="500" y1="140" x2="500" y2="660" stroke="#2a3050" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- ═══════════════ ROW 1: INPUT ═══════════════ -->
+  <!-- Resume Text box -->
+  <rect x="120" y="72" width="220" height="64" rx="10" fill="#1e2535" filter="url(#shadow)"/>
+  <rect x="120" y="72" width="220" height="4" rx="2" fill="url(#accentGrad)"/>
+  <text x="230" y="98" text-anchor="middle" font-size="13" font-weight="600" fill="#e8eaf0">📄 Resume Text</text>
+  <text x="230" y="114" text-anchor="middle" font-size="10" fill="#7a84a0">Raw .txt input or paste</text>
+  <text x="230" y="128" text-anchor="middle" font-size="10" fill="#7a84a0">via GUI or CLI</text>
+
+  <!-- Jobs Source box -->
+  <rect x="660" y="72" width="220" height="64" rx="10" fill="#1e2535" filter="url(#shadow)"/>
+  <rect x="660" y="72" width="220" height="4" rx="2" fill="url(#accentGrad)"/>
+  <text x="770" y="98" text-anchor="middle" font-size="13" font-weight="600" fill="#e8eaf0">🗂 Job Postings</text>
+  <text x="770" y="114" text-anchor="middle" font-size="10" fill="#7a84a0">jobs.csv  or  default list</text>
+  <text x="770" y="128" text-anchor="middle" font-size="10" fill="#7a84a0">loaded by  data.py</text>
+
+  <!-- Arrows down to layer 2 -->
+  <line x1="230" y1="136" x2="230" y2="178" stroke="#4f8ef7" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="770" y1="136" x2="770" y2="448" stroke="#4f8ef7" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arrow)"/>
+
+  <!-- ═══════════════ ROW 2: EXTRACT ═══════════════ -->
+  <!-- resume_analyzer.py box -->
+  <rect x="80" y="178" width="300" height="108" rx="10" fill="#1e2535" filter="url(#shadow)"/>
+  <rect x="80" y="178" width="300" height="4" rx="2" fill="#7c5cbf"/>
+  <text x="230" y="200" text-anchor="middle" font-size="13" font-weight="600" fill="#e8eaf0">resume_analyzer.py</text>
+  <text x="230" y="216" text-anchor="middle" font-size="10" fill="#7a84a0">build_resume_model( )</text>
+
+  <!-- Mini sub-boxes inside -->
+  <rect x="96"  y="224" width="80" height="28" rx="5" fill="#252840"/>
+  <text x="136" y="241" text-anchor="middle" font-size="9" fill="#b0b8d0">extract_skills</text>
+
+  <rect x="185" y="224" width="80" height="28" rx="5" fill="#252840"/>
+  <text x="225" y="241" text-anchor="middle" font-size="9" fill="#b0b8d0">extract_exp</text>
+
+  <rect x="274" y="224" width="86" height="28" rx="5" fill="#252840"/>
+  <text x="317" y="241" text-anchor="middle" font-size="9" fill="#b0b8d0">extract_edu</text>
+
+  <rect x="96"  y="256" width="80" height="24" rx="5" fill="#252840"/>
+  <text x="136" y="272" text-anchor="middle" font-size="9" fill="#b0b8d0">extract_proj</text>
+
+  <rect x="185" y="256" width="80" height="24" rx="5" fill="#252840"/>
+  <text x="225" y="272" text-anchor="middle" font-size="9" fill="#b0b8d0">extract_certs</text>
+
+  <!-- data.py side box -->
+  <rect x="420" y="190" width="160" height="52" rx="10" fill="#1e2535" filter="url(#shadow)"/>
+  <rect x="420" y="190" width="160" height="4" rx="2" fill="#f7c948"/>
+  <text x="500" y="212" text-anchor="middle" font-size="12" font-weight="600" fill="#e8eaf0">data.py</text>
+  <text x="500" y="228" text-anchor="middle" font-size="9" fill="#7a84a0">skill_categories</text>
+  <text x="500" y="240" text-anchor="middle" font-size="9" fill="#7a84a0">education_levels</text>
+
+  <!-- data.py arrows -->
+  <line x1="420" y1="216" x2="382" y2="230" stroke="#f7c948" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+
+  <!-- Arrow down to CSP model -->
+  <line x1="230" y1="286" x2="230" y2="330" stroke="#7c5cbf" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ═══════════════ ROW 3: CSP MODEL ═══════════════ -->
+  <rect x="60" y="330" width="340" height="110" rx="10" fill="#1e2535" filter="url(#shadow)"/>
+  <rect x="60" y="330" width="340" height="4" rx="2" fill="#f7c948"/>
+  <text x="230" y="352" text-anchor="middle" font-size="13" font-weight="600" fill="#e8eaf0">CSP Model  (resume_analyzer.py)</text>
+
+  <!-- Variables column -->
+  <text x="130" y="372" text-anchor="middle" font-size="10" fill="#7a84a0" font-weight="600">VARIABLES</text>
+  <rect x="82"  y="378" width="96" height="18" rx="4" fill="#1a2240"/>
+  <text x="130" y="391" text-anchor="middle" font-size="9" fill="#4f8ef7">skill_[category]</text>
+  <rect x="82"  y="400" width="96" height="18" rx="4" fill="#1a2240"/>
+  <text x="130" y="413" text-anchor="middle" font-size="9" fill="#4f8ef7">experience_years</text>
+  <rect x="82"  y="422" width="96" height="18" rx="4" fill="#1a2240"/>
+  <text x="130" y="435" text-anchor="middle" font-size="9" fill="#4f8ef7">education_level</text>
+
+  <!-- Domains column -->
+  <text x="240" y="372" text-anchor="middle" font-size="10" fill="#7a84a0" font-weight="600">DOMAINS</text>
+  <rect x="192" y="378" width="96" height="18" rx="4" fill="#1a2240"/>
+  <text x="240" y="391" text-anchor="middle" font-size="9" fill="#7c5cbf">[found skills]</text>
+  <rect x="192" y="400" width="96" height="18" rx="4" fill="#1a2240"/>
+  <text x="240" y="413" text-anchor="middle" font-size="9" fill="#7c5cbf">range(0, 21)</text>
+  <rect x="192" y="422" width="96" height="18" rx="4" fill="#1a2240"/>
+  <text x="240" y="435" text-anchor="middle" font-size="9" fill="#7c5cbf">[PhD..HS]</text>
+
+  <!-- Constraints column -->
+  <text x="348" y="372" text-anchor="middle" font-size="10" fill="#7a84a0" font-weight="600">CONSTRAINTS</text>
+  <rect x="298" y="378" width="96" height="18" rx="4" fill="#1a2240"/>
+  <text x="346" y="391" text-anchor="middle" font-size="9" fill="#f7c948">exp ≥ required</text>
+  <rect x="298" y="400" width="96" height="18" rx="4" fill="#1a2240"/>
+  <text x="346" y="413" text-anchor="middle" font-size="9" fill="#f7c948">edu ≥ required</text>
+  <rect x="298" y="422" width="96" height="18" rx="4" fill="#1a2240"/>
+  <text x="346" y="435" text-anchor="middle" font-size="9" fill="#f7c948">is_consistent( )</text>
+
+  <!-- Arrow down to solver -->
+  <line x1="230" y1="440" x2="230" y2="484" stroke="#3ecf8e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+
+  <!-- ═══════════════ ROW 4: MATCHER + SOLVER ═══════════════ -->
+  <!-- matcher.py -->
+  <rect x="60" y="484" width="220" height="110" rx="10" fill="#1e2535" filter="url(#shadow)"/>
+  <rect x="60" y="484" width="220" height="4" rx="2" fill="#3ecf8e"/>
+  <text x="170" y="506" text-anchor="middle" font-size="13" font-weight="600" fill="#e8eaf0">matcher.py</text>
+  <text x="170" y="520" text-anchor="middle" font-size="10" fill="#7a84a0">JobMatcher class</text>
+  <rect x="72"  y="528" width="100" height="22" rx="4" fill="#1a3028"/>
+  <text x="122" y="543" text-anchor="middle" font-size="9" fill="#3ecf8e">skill_match 50%</text>
+  <rect x="176" y="528" width="96" height="22" rx="4" fill="#1a3028"/>
+  <text x="224" y="543" text-anchor="middle" font-size="9" fill="#3ecf8e">exp_match 25%</text>
+  <rect x="72"  y="554" width="100" height="22" rx="4" fill="#1a3028"/>
+  <text x="122" y="569" text-anchor="middle" font-size="9" fill="#3ecf8e">edu_match 15%</text>
+  <rect x="176" y="554" width="96" height="22" rx="4" fill="#1a3028"/>
+  <text x="224" y="569" text-anchor="middle" font-size="9" fill="#3ecf8e">cert+proj 10%</text>
+  <text x="170" y="588" text-anchor="middle" font-size="10" fill="#3ecf8e" font-weight="600">→ match_score (0–100)</text>
+
+  <!-- solver.py -->
+  <rect x="310" y="484" width="220" height="110" rx="10" fill="#1e2535" filter="url(#shadow)"/>
+  <rect x="310" y="484" width="220" height="4" rx="2" fill="#3ecf8e"/>
+  <text x="420" y="506" text-anchor="middle" font-size="13" font-weight="600" fill="#e8eaf0">solver.py</text>
+  <text x="420" y="520" text-anchor="middle" font-size="10" fill="#7a84a0">Backtracking CSP Search</text>
+  <rect x="320" y="528" width="200" height="22" rx="4" fill="#1a3028"/>
+  <text x="420" y="543" text-anchor="middle" font-size="9" fill="#3ecf8e">select_best_job( ) — MRV heuristic</text>
+  <rect x="320" y="554" width="200" height="22" rx="4" fill="#1a3028"/>
+  <text x="420" y="569" text-anchor="middle" font-size="9" fill="#3ecf8e">backtrack( ) + is_consistent( )</text>
+  <text x="420" y="588" text-anchor="middle" font-size="10" fill="#3ecf8e" font-weight="600">→ top-N recommendations</text>
+
+  <!-- Arrow matcher → solver -->
+  <line x1="280" y1="540" x2="308" y2="540" stroke="#3ecf8e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+
+  <!-- Jobs → solver -->
+  <line x1="770" y1="448" x2="530" y2="548" stroke="#4f8ef7" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Arrow down to output -->
+  <line x1="420" y1="594" x2="420" y2="632" stroke="#3ecf8e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <line x1="230" y1="594" x2="230" y2="632" stroke="#3ecf8e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+
+  <!-- ═══════════════ ROW 5: OUTPUT ═══════════════ -->
+  <!-- visualize.py -->
+  <rect x="60" y="632" width="200" height="62" rx="10" fill="#1e2535" filter="url(#shadow)"/>
+  <rect x="60" y="632" width="200" height="4" rx="2" fill="#f75f5f"/>
+  <text x="160" y="652" text-anchor="middle" font-size="12" font-weight="600" fill="#e8eaf0">visualize.py</text>
+  <text x="160" y="668" text-anchor="middle" font-size="9" fill="#7a84a0">DataFrame + console table</text>
+  <text x="160" y="682" text-anchor="middle" font-size="9" fill="#7a84a0">print_recommendations( )</text>
+
+  <!-- gui.py -->
+  <rect x="280" y="632" width="200" height="62" rx="10" fill="#1e2535" filter="url(#shadow)"/>
+  <rect x="280" y="632" width="200" height="4" rx="2" fill="#f75f5f"/>
+  <text x="380" y="652" text-anchor="middle" font-size="12" font-weight="600" fill="#e8eaf0">gui.py</text>
+  <text x="380" y="668" text-anchor="middle" font-size="9" fill="#7a84a0">Tkinter desktop GUI</text>
+  <text x="380" y="682" text-anchor="middle" font-size="9" fill="#7a84a0">Recs · Skills · Summary tabs</text>
+
+  <!-- main.py -->
+  <rect x="500" y="632" width="200" height="62" rx="10" fill="#1e2535" filter="url(#shadow)"/>
+  <rect x="500" y="632" width="200" height="4" rx="2" fill="#f75f5f"/>
+  <text x="600" y="652" text-anchor="middle" font-size="12" font-weight="600" fill="#e8eaf0">main.py</text>
+  <text x="600" y="668" text-anchor="middle" font-size="9" fill="#7a84a0">CLI entry point</text>
+  <text x="600" y="682" text-anchor="middle" font-size="9" fill="#7a84a0">python main.py resume.txt</text>
+
+  <!-- solver arrow to main.py -->
+  <line x1="500" y1="594" x2="600" y2="631" stroke="#3ecf8e" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+
+  <!-- ═══════════════ RIGHT SIDE: data.py full box ═══════════════ -->
+  <rect x="660" y="270" width="230" height="170" rx="10" fill="#1e2535" filter="url(#shadow)"/>
+  <rect x="660" y="270" width="230" height="4" rx="2" fill="#f7c948"/>
+  <text x="775" y="292" text-anchor="middle" font-size="13" font-weight="600" fill="#e8eaf0">data.py</text>
+  <text x="775" y="308" text-anchor="middle" font-size="10" fill="#7a84a0">Shared constants &amp; loader</text>
+
+  <rect x="672" y="314" width="206" height="22" rx="4" fill="#252215"/>
+  <text x="775" y="329" text-anchor="middle" font-size="9" fill="#f7c948">skill_categories  (5 categories)</text>
+
+  <rect x="672" y="340" width="206" height="22" rx="4" fill="#252215"/>
+  <text x="775" y="355" text-anchor="middle" font-size="9" fill="#f7c948">education_levels  {PhD:5 … HS:1}</text>
+
+  <rect x="672" y="366" width="206" height="22" rx="4" fill="#252215"/>
+  <text x="775" y="381" text-anchor="middle" font-size="9" fill="#f7c948">load_jobs( )  CSV or defaults</text>
+
+  <rect x="672" y="392" width="206" height="40" rx="4" fill="#252215"/>
+  <text x="775" y="408" text-anchor="middle" font-size="9" fill="#f7c948">10 default jobs  (fallback)</text>
+  <text x="775" y="424" text-anchor="middle" font-size="9" fill="#7a84a0">overridden by jobs.csv</text>
+
+  <!-- data.py arrow to matcher -->
+  <line x1="660" y1="360" x2="540" y2="400" stroke="#f7c948" stroke-width="1.2" stroke-dasharray="5 3"/>
+
+  <!-- ═══════════════ LEGEND ═══════════════ -->
+  <rect x="660" y="484" width="230" height="130" rx="10" fill="#181c27" stroke="#2a3050" stroke-width="1"/>
+  <text x="775" y="504" text-anchor="middle" font-size="11" font-weight="600" fill="#e8eaf0">Legend</text>
+  <line x1="672" y1="516" x2="716" y2="516" stroke="#4f8ef7" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="724" y="520" font-size="9" fill="#7a84a0">Data / control flow</text>
+  <line x1="672" y1="534" x2="716" y2="534" stroke="#f7c948" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="724" y="538" font-size="9" fill="#7a84a0">Shared dependency</text>
+  <rect x="672" y="546" width="10" height="10" rx="2" fill="#7c5cbf"/>
+  <text x="688" y="556" font-size="9" fill="#7a84a0">Extract layer</text>
+  <rect x="672" y="562" width="10" height="10" rx="2" fill="#f7c948"/>
+  <text x="688" y="572" font-size="9" fill="#7a84a0">Data / Model layer</text>
+  <rect x="672" y="578" width="10" height="10" rx="2" fill="#3ecf8e"/>
+  <text x="688" y="588" font-size="9" fill="#7a84a0">Solve / Score layer</text>
+  <rect x="672" y="594" width="10" height="10" rx="2" fill="#f75f5f"/>
+  <text x="688" y="604" font-size="9" fill="#7a84a0">Output layer</text>
+</svg>

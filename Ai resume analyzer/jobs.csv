@@ -1,0 +1,6 @@
+id,title,company,location,required_skills,required_experience,required_education,salary_range,description
+1,Senior Python Developer,TechCorp Solutions,New York NY,Python;Django;SQL;Git;REST APIs,3,Bachelor,$90000 - $120000,Looking for an experienced Python developer to build scalable web applications.
+2,Machine Learning Engineer,AI Innovations Inc,San Francisco CA,Python;TensorFlow;PyTorch;Scikit-learn;SQL,2,Master,$120000 - $160000,Develop and deploy ML models for production systems.
+3,Full Stack Developer,WebWorks Agency,Austin TX,JavaScript;React;Node.js;SQL;Git,2,Bachelor,$80000 - $110000,Build modern web applications using MERN stack.
+4,Data Scientist,DataMind Analytics,Seattle WA,Python;Pandas;NumPy;Scikit-learn;SQL;Tableau,3,Master,$100000 - $140000,Analyze complex datasets and build predictive models.
+5,DevOps Engineer,CloudScale Systems,Remote,Docker;Kubernetes;AWS;Jenkins;Linux;Terraform;Git,3,Bachelor,$110000 - $150000,Manage cloud infrastructure and CI/CD pipelines.
